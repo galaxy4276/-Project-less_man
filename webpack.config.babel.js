@@ -30,7 +30,16 @@ const webpacking = {
   },
   plugins: [
     new extractCSS({ filename: "styles.css" })
-  ]
+  ],
+  devServer: {
+    host: "127.0.0.1",
+    contentBase: path.resolve(__dirname, "src", "public"),
+    compress: true,
+    hot: true,
+    inline: true,
+    port: 8000,
+    open: true
+  },
 };
 
 export default webpacking;

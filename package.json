@@ -10,7 +10,8 @@
     "express": "^4.17.1",
     "global": "^4.4.0",
     "nodemon": "^2.0.4",
-    "pug": "^3.0.0"
+    "pug": "^3.0.0",
+    "sass": "^1.26.10"
   },
   "scripts": {
     "start": "nodemon --exec babel-node ./src",
@@ -22,6 +23,7 @@
     "sass-loader": "^10.0.1",
     "scss-loader": "^0.0.1",
     "webpack": "^4.44.1",
-    "webpack-cli": "^3.3.12"
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
   }
 }
