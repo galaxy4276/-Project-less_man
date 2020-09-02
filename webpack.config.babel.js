@@ -13,6 +13,7 @@ const webpacking = {
   output: {
     filename: "[name].js",
     path: OUTPUT_DIR,
+    publicPath: OUTPUT_DIR,
   },
   module: {
     rules: [
