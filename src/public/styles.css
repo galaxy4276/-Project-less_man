@@ -142,3 +142,162 @@ table {
 .searchbar_placeholder label {
   margin-left: 5px;
 }
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  background: silver;
+  padding: 30px;
+}
+
+.board-wrapper {
+  width: 80vw;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  display: grid;
+}
+
+.top-banners {
+  display: grid;
+  grid-template-columns: [first] 1.5fr repeat(3, 1fr);
+  height: 320px;
+}
+
+.board-big-card-wrapper {
+  display: flex;
+  margin-left: 20px;
+  margin-right: 20px;
+  border: 1px solid #f0f0f0;
+  border-radius: 5px;
+}
+.board-big-card-wrapper .board-big-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+.board-big-card-wrapper .board-big-card .banner-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-decoration: none;
+  color: white;
+  background-image: linear-gradient(to top, transparent, rgba(0, 0, 0, 0.5)), url("http://localhost:8001/img/top1.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px 5px 0px 0px;
+}
+.board-big-card-wrapper .board-big-card .banner-wrapper .banner .banner-title {
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  padding: 10px;
+  margin-bottom: 5px;
+  font-size: 15pt;
+  font-weight: 600;
+}
+.board-big-card-wrapper .board-big-card .banner-wrapper .banner .banner-subtitle {
+  text-align: center;
+}
+.board-big-card-wrapper .board-big-card .board-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  background: whitesmoke;
+  border-radius: 0px 0px 5px 5px;
+}
+.board-big-card-wrapper .board-big-card .board-info .board-writer .profile {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+.board-big-card-wrapper .board-big-card .board-info .board-writer .profile div {
+  width: 32px;
+  height: 32px;
+  background: black;
+  border-radius: 35px;
+}
+.board-big-card-wrapper .board-big-card .board-info .board-writer .profile a {
+  margin-left: 8px;
+  text-decoration: none;
+  color: black;
+}
+.board-big-card-wrapper .board-big-card .board-info .board-like {
+  padding: 5px;
+  text-align: center;
+}
+
+.board-card-wrapper {
+  display: flex;
+  margin-left: 20px;
+  margin-right: 20px;
+  border: 1px solid #f0f0f0;
+  border-radius: 5px;
+}
+
+.board-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+.board-card .banner-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-decoration: none;
+  color: white;
+  background-image: linear-gradient(to top, transparent, rgba(0, 0, 0, 0.5)), url("http://localhost:8001/img/top2.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px 5px 0px 0px;
+}
+.board-card .banner-wrapper .banner .banner-title {
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  padding: 10px;
+  margin-bottom: 5px;
+  font-size: 12pt;
+  font-weight: 600;
+}
+.board-card .banner-wrapper .banner .banner-subtitle {
+  text-align: center;
+}
+.board-card .board-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  background: whitesmoke;
+  border-radius: 0px 0px 5px 5px;
+}
+.board-card .board-info .board-writer .profile {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+.board-card .board-info .board-writer .profile div {
+  width: 32px;
+  height: 32px;
+  background: black;
+  border-radius: 35px;
+}
+.board-card .board-info .board-writer .profile a {
+  margin-left: 8px;
+  text-decoration: none;
+  color: black;
+}
+.board-card .board-info .board-like {
+  padding: 5px;
+  text-align: center;
+}
+
+main {
+  height: 100vh;
+}
