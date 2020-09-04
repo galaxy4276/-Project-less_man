@@ -144,9 +144,8 @@ table {
 }
 
 footer {
-  position: fixed;
+  float: inline-end;
   bottom: 0;
-  width: 100vw;
   background: silver;
   padding: 30px;
 }
