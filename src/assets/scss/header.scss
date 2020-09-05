@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   height: 4rem;
-  width: 100vw;
+  width: 100%;
   font-family: 'Roboto', 'Nanum Gothic Coding';
 }
 
@@ -41,8 +41,8 @@
   }
   
   .header-rightside {
-    margin-right: 30px;
-    margin-top: 20px;
+    padding-right: 30px;
+    padding-top: 20px;
     a {
       width: 120px;
       background: black;

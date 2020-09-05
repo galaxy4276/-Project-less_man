@@ -11,7 +11,8 @@
     "global": "^4.4.0",
     "nodemon": "^2.0.4",
     "pug": "^3.0.0",
-    "sass": "^1.26.10"
+    "sass": "^1.26.10",
+    "sequelize": "^6.3.5"
   },
   "scripts": {
     "start": "nodemon --exec babel-node ./src",
@@ -21,6 +22,7 @@
     "css-loader": "^4.2.2",
     "dotenv": "^8.2.0",
     "helmet": "^4.1.0",
+    "mariadb": "^2.4.2",
     "mini-css-extract-plugin": "^0.11.0",
     "morgan": "^1.10.0",
     "sass-loader": "^10.0.1",

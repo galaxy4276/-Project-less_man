@@ -3,12 +3,15 @@ import { config } from 'dotenv';
 import helmet from 'helmet';
 import path from 'path';
 import morgan from 'morgan';
+import sequelize from './models';
 
 
 const app = express();
+const mariadb = sequelize.sequelize;
 config();
-
-
+mariadb.sync()
+  .then(() => console.log('db연결성공'))
+  .catch(e => console.log(e));
 app.set('view engine', 'pug');
 app.set('port', process.env.PORT);
 app.set('views', path.resolve(__dirname, 'views'));

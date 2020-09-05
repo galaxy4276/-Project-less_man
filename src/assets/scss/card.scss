@@ -1,0 +1,199 @@
+* {
+  box-sizing: border-box;
+}
+
+.board-wrapper {
+  font-family: 'Roboto', 'Nanum Gothic Coding';
+
+  width: 80vw;
+  margin-left: auto;
+  margin-right: auto;
+  
+  display: grid;
+  grid-template-rows: [first] 320px;
+  height: 100%;
+}
+
+
+.top-banners {
+  display: grid;
+  grid-template-columns: [first] 1.5fr repeat(3, 1fr);
+  height: 320px;  
+  margin-top: 1rem;
+}
+
+
+.board-big-card-wrapper {
+  font-family: 'Roboto', 'Nanum Gothic Coding';
+
+  display: flex;
+  margin-right: 20px;
+  border: 1px solid rgb(240, 240, 240);
+  border-radius: 5px;
+
+  .board-big-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+
+    .banner-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      text-decoration: none;
+      color: white;
+      background-image: linear-gradient(to top, transparent, rgba(0, 0, 0, 0.5)), url('http://localhost:8001/img/top1.jpg');
+      background-size: cover;
+      background-position: center;
+      border-radius: 5px 5px 0px 0px;
+      .banner {
+        .banner-title {
+          border-top: 2px solid white;
+          border-bottom: 2px solid white;
+          padding: 10px;
+          margin-bottom: 5px;
+          font-size: 15pt;
+          font-weight: 600;
+        }
+        .banner-subtitle {
+          text-align: center;
+        }
+      }
+    }
+
+    .board-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: 50px;
+      background: white;
+      border-radius: 0px 0px 5px 5px;
+
+      .board-writer .profile {
+        display: flex;
+        align-items: center;
+        padding: 5px;
+        div {
+          width: 32px;
+          height: 32px;
+          background: black;
+          border-radius: 65px;
+        }
+        a {
+          margin-left: 8px;
+          text-decoration: none;
+          color: black;
+        }
+      }
+
+      .board-like {
+        padding: 5px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+
+.board-card-wrapper {
+  font-family: 'Roboto', 'Nanum Gothic Coding';
+
+  display: flex;
+  margin-right: 20px;
+  border: 1px solid rgb(240, 240, 240);
+  border-radius: 5px;
+}
+
+
+.board-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+
+.banner-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-decoration: none;
+  color: white;
+  background-image: linear-gradient(to top, transparent, rgba(0, 0, 0, 0.5)), url('http://localhost:8001/img/top2.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px 5px 0px 0px;
+  .banner {
+    .banner-title {
+      border-top: 2px solid white;
+      border-bottom: 2px solid white;
+      padding: 10px;
+      margin-bottom: 5px;
+      font-size: 12pt;
+      font-weight: 600;
+    }
+    .banner-subtitle {
+      text-align: center;
+    }
+  }
+  } 
+  .board-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background: white;
+    border-radius: 0px 0px 5px 5px;
+
+    .board-writer .profile {
+      display: flex;
+      align-items: center;
+      padding: 5px;
+      div {
+        width: 32px;
+        height: 32px;
+        background: black;
+        border-radius: 65px;
+      }
+      a {
+        margin-left: 8px;
+        text-decoration: none;
+        color: black;
+      }
+    }
+
+    .board-like {
+      padding: 5px;
+      text-align: center;
+    }
+  }
+}
+
+
+// 본문 컨텐츠
+.main-contents {
+  font-family: 'Roboto', 'Nanum Gothic Coding';
+
+  .main-title {
+    margin-top: 60px;
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+  }
+
+  .main-banners {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: 320px;
+  }
+  
+  .board-card-wrapper {
+    height: 300px;
+    .banner-wrapper {
+      background:  linear-gradient(to top, transparent, rgba(0, 0, 0, 0.5)), url('http://localhost:8001/img/content1.jpg');
+      background-size: cover;
+    }
+  }
+}

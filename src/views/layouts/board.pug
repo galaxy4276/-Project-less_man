@@ -1,0 +1,36 @@
+include ../mixins/card
+.board-wrapper
+  .top-banners
+    .board-big-card-wrapper
+      .board-big-card
+        a.banner-wrapper(href="")
+          .banner
+            .banner-title
+              p test: this is banner
+            .banner-subtitle
+              p test: this is sub title.
+        .board-info
+          .board-writer
+            .profile
+              div
+              a(href="#") test: User
+          .board-like
+            label like
+            p.count 0
+    +boardCard
+    +boardCard       
+    +boardCard
+  .main-contents
+    .main-title
+      p recent articles
+    .main-banners
+      +boardCard
+      +boardCard
+      +boardCard
+      +boardCard
+      +boardCard
+      +boardCard
+      +boardCard
+      +boardCard
+      +boardCard
+      +boardCard
