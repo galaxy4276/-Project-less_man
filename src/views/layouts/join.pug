@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Login & Join
+    link(rel="stylesheet", href="/styles.css")
+    link(rel="stylesheet", href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous")
+  body
+    .login-container--image
+      .login-container--wrapper
+        .login-box
+          .login-title
+            header Funless
+            p 회원가입
+          .login-contents
+            form.local-login(id="local-joinform" method="post" action="/auth/join")
+              input.input-id(placeholder="ID" name="id")
+              input.input-pw(type="password" name="passwd" placeholder="비밀번호 (최소 6자)")
+              input.input-pw(type="password" name="verifypw" placeholder="비밀번호 확인")
+              button(type="submit") 가입
+            form.foreign-login
+              button.external-login--btn 회원가입
+              button.external-login--btn 회원가입
+              button.external-login--btn 회원가입
+          .joinus
+            a(href="#") Did you haven't account?
