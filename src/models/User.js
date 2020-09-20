@@ -11,7 +11,7 @@ const User = (sequelize, DataTypes) => {
       unique: 'username',
     },
     password: {
-      type: DataTypes.STRING(15),
+      type: DataTypes.STRING(150),
       allowNull: false,
       unique: 'password',
     },
