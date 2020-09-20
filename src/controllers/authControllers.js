@@ -1,12 +1,15 @@
 import sequelize from '../models';
 import bcrypt from 'bcrypt';
+import passport from 'passport';
 
 
 const { User } = sequelize; 
 
-export const localLogin = (req, res) => {
-  console.log('test');
-};
+export const localLogin = passport.authenticate('local', {
+  successRedirect: '/',
+  failureRedirect: '/auth/login',
+  failureFlash: false
+});
 
 
 export const localJoin = async (req, res, next) => {
@@ -16,7 +19,6 @@ export const localJoin = async (req, res, next) => {
     const user = await User.findByPk(id);
 
     const pw = await bcrypt.hash(passwd, 10);
-    console.log(`created pw: ${pw}`);
 
     if (user) {
       console.log('유저가 이미 존재합니다.');
@@ -26,8 +28,8 @@ export const localJoin = async (req, res, next) => {
     if ( !user && (passwd === verifypw)) {
       await User.create({
         id,
-        name: 'unknown1',
-        password: await (await bcrypt.hash(passwd, 10)).slice(0, 30),
+        name: 'unknown2',
+        password: await bcrypt.hash(passwd, 10),
       });
       console.log('계정이 생성 되었습니다.');
     } else {
