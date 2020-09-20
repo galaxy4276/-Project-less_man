@@ -12,7 +12,11 @@
           i.fas.fa-search
           label(for="searchbar") searching for you want..
     .header-rightside
-      a(href="/login") 로그인/가입
+      if !user
+        a(href="/auth/login") 로그인/가입
+      else
+        a(href="/user/") My Profile
+        a(href="/auth/logout") 로그아웃
 .header-wrapper
   nav.header
     .second_header

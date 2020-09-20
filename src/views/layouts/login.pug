@@ -14,13 +14,13 @@ html(lang="en")
             header Funless
             p 로그인
           .login-contents
-            form.local-login
-              input.input-id(placeholder="enter your id..")
-              input.input-pw(type="password" placeholder="enter your password..")
+            form.local-login(action="/auth/login" method="post")
+              input.input-id(placeholder="enter your id.." name="id")
+              input.input-pw(type="password" placeholder="enter your password.." name="password")
               button(type="submit") 로그인
             form.foreign-login
               button.external-login--btn 로그인
               button.external-login--btn 로그인
               button.external-login--btn 로그인
           .joinus
-            a(href="/join") Did you haven't account?
+            a(href="/auth/join") Did you haven't account?
