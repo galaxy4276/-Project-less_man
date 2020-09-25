@@ -3,21 +3,34 @@ import { config } from 'dotenv';
 import helmet from 'helmet';
 import path from 'path';
 import morgan from 'morgan';
-import cookieParser, { JSONCookies } from 'cookie-parser';
+import cookieParser from 'cookie-parser';
 import session from 'express-session';
 import passport from 'passport';
 import connectMaria from './lib/connectMaria';
 import './controllers/passport';
+import MySQLStore from 'express-mysql-session';
+MySQLStore(session);
 
 
 // Router
 import authRouter from './routes/authRouter';
 import globalRouter from './routes/globalRouter';
+import postRouter from './routes/postRouter';
+
+import shareFront from './lib/sharePug';
 
 
 const app = express();
 config();
 connectMaria();
+
+const MySQLOptions = {
+  host: process.env.MARIADB_HOST,
+  port: process.env.MARIADB_PORT,
+  user: process.env.MARIADB_USERNAME,
+  password: process.env.MARIADB_PASSWORD,
+  database: process.env.MARIADB_DATABASE,
+};
 
 
 app.set('view engine', 'pug');
@@ -30,14 +43,16 @@ app.use(morgan('dev'));
 app.use(express.static(path.resolve(__dirname, 'public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+app.use(cookieParser('eungi'));
 app.use(session({
   secret: 'eungi',
   resave: false,
   saveUninitialized: true,
+  store: new MySQLStore(MySQLOptions),
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(shareFront);
 
 
 app.all('/*', (req, res, next) => {
@@ -49,6 +64,7 @@ app.all('/*', (req, res, next) => {
 });
 app.use('/', globalRouter);
 app.use('/auth', authRouter);
+app.use('/post', postRouter);
 
 
 app.listen(app.get('port'), () => {
