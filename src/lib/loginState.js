@@ -5,3 +5,11 @@ export const isLoggedIn = (req, res, next) => {
     next();
   }
 };
+
+export const isNotLoggedIn = (req, res, next) => {
+  if (req.user) {
+    next();
+  } else {
+    res.redirect('/');
+  };
+};
