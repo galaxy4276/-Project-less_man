@@ -10,6 +10,7 @@ const OUTPUT_DIR = path.resolve(__dirname, "src", "public");
 const webpacking = {
   entry: ENTRY_FILE,
   mode: MODE,
+  devtool: 'inline-source-map',
   output: {
     filename: "[name].js",
     path: OUTPUT_DIR,
@@ -17,6 +18,14 @@ const webpacking = {
   },
   module: {
     rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+        options: {
+          presets: ['@babel/preset-env']
+        }
+      },
       {
         test: /\.s[ac]ss$/i,
         use: [
@@ -32,15 +41,6 @@ const webpacking = {
   plugins: [
     new extractCSS({ filename: "styles.css" })
   ],
-  devServer: {
-    host: "127.0.0.1",
-    contentBase: path.resolve(__dirname, "src", "public"),
-    compress: true,
-    hot: true,
-    inline: true,
-    port: 8000,
-    open: true
-  },
 };
 
 export default webpacking;
