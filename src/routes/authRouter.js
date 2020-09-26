@@ -1,5 +1,5 @@
 import express from 'express';
-import { localLogin, localJoin } from '../controllers/authControllers';
+import { localLogin, localJoin, logout } from '../controllers/authControllers';
 import { isLoggedIn } from '../lib/loginState';
 
 
@@ -19,10 +19,7 @@ authRouter.get('/test', (req, res) => {
   res.send('test');
 });
 
-authRouter.get('/logout', (req, res) => {
-  req.logout();
-  res.redirect('/');
-});
+authRouter.get('/logout', logout);
 
 
 authRouter.post('/login', isLoggedIn, localLogin);
