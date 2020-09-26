@@ -1,5 +1,6 @@
 import '../scss/styles.scss';
 
-window.onload = () => {
-  console.log('hello world');
-};
+// js
+import './utils/fileShow';
+
+console.log('main is imported.');
