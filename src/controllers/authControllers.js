@@ -44,3 +44,8 @@ export const localJoin = async (req, res, next) => {
 
   res.redirect('/');
 };
+
+export const logout = (req, res) => {
+  req.logout();
+  res.redirect('/');
+};
