@@ -24,13 +24,5 @@ include ../mixins/card
     .main-title
       p recent articles
     .main-banners
-      +boardCard
-      +boardCard
-      +boardCard
-      +boardCard
-      +boardCard
-      +boardCard
-      +boardCard
-      +boardCard
-      +boardCard
-      +boardCard
+      for item in articleList
+        +boardCard(item.title, item.content, item.image, item.UserId)
