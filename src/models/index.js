@@ -11,19 +11,21 @@ const db = {};
 
 export const sequelize = new Sequelize(config.database, config.username, config.password, config);
 
-db.User = User(sequelize, Sequelize);
-db.Post = Post(sequelize, Sequelize);
+db.User = User;
+db.Post = Post;
+
+Object.keys(db).forEach(modelName => {
+  db[modelName].init(sequelize); // init만 추가
+});
+
+Object.keys(db).forEach(modelName => {
+ if (db[modelName].associate) {
+   db[modelName].associate(db);
+ }
+});
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
-
-db.User.hasMany(db.Post);
-db.Post.belongsTo(db.User);
-// Object.keys(db).forEach(modelName => {
-//  if (db[modelName].associate) {
-//    db[modelName].associate(db);
-//  }
-// });
 
 export default db;  
