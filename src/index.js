@@ -41,6 +41,7 @@ app.set('views', path.resolve(__dirname, 'views'));
 app.use(helmet());
 app.use(morgan('dev'));
 app.use(express.static(path.resolve(__dirname, 'public')));
+app.use('/image', express.static(path.resolve(__dirname, 'uploads')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser('eungi'));
