@@ -22,7 +22,9 @@ authRouter.get('/test', (req, res) => {
 authRouter.get('/logout', logout);
 
 
-authRouter.post('/login', isLoggedIn, localLogin);
+authRouter.post('/login', isLoggedIn, localLogin, (req, res, next) => {
+  res.redirect('/');
+});
 authRouter.post('/join', isLoggedIn, localJoin);
 
 
