@@ -69,5 +69,5 @@ app.use('/post', postRouter);
 
 
 app.listen(app.get('port'), () => {
-  console.log('실행중 테스트');
+  console.log(`Funless running on http://localhost:${process.env.PORT}`);
 });
