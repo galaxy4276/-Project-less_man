@@ -20,7 +20,7 @@ const postRouter = require('express').Router();
 
 
 postRouter.get('/form', isNotLoggedIn, getForm);
-postRouter.post('/form', upload.single('file'), postForm);
+postRouter.post('/form', upload.array('file'), postForm);
 
 
 
