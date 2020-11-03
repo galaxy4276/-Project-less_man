@@ -1,6 +1,6 @@
 'use strict';
 import Sequelize from 'sequelize';
-import { development } from './config';
+import { development } from '../config/config';
 import User from './User';
 import Post from './Post';
 
