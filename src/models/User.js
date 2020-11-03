@@ -5,6 +5,10 @@ import { DataTypes } from 'sequelize';
 export default class User extends Model {
   static init(sequelize) {
     return super.init({
+      userid: {
+        type: DataTypes.STRING(20),
+        allowNull: false,
+      },
       name: {
         type: DataTypes.STRING(10),
         allowNull: false,
