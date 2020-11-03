@@ -16,9 +16,7 @@ export const localJoin = async (req, res, next) => {
   const { id, passwd, verifypw } = req.body;
 
   try {
-    const user = await User.findByPk(id);
-
-    const pw = await bcrypt.hash(passwd, 10);
+    const user = await User.findOne({ where: { userid: id }});
 
     if (user) {
       console.log('유저가 이미 존재합니다.');
@@ -27,7 +25,7 @@ export const localJoin = async (req, res, next) => {
 
     if ( !user && (passwd === verifypw)) {
       await User.create({
-        id,
+        userid: id,
         name: 'unknown2',
         password: await bcrypt.hash(passwd, 10),
       });

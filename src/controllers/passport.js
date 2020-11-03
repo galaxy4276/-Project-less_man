@@ -11,13 +11,17 @@ passport.use(new LocalStrategy({
   passwordField: 'password'
 }, async (userId, userPw, done) => {
   try {
-    const find = await User.findByPk(userId);
-    const { id, password } = find.dataValues;
+    const find = await User.findOne({
+      where: { }
+    });
+    console.log('find');
+    console.log(find);
+    const { userid, password } = find.dataValues;
     console.table({ value: password});
 
     const verify = await bcrypt.compare(userPw, password);
     console.log(`verify: ${verify}`);
-    if ( id === userId ) {
+    if ( userid === userId ) {
       ( verify ) 
         ? done(null, find) 
         : done(null, false, { message: '패스워드 값이 일치하지 않습니다. ' });
