@@ -1,5 +1,5 @@
 import sequelize from '../models';
-const { Post, User } = sequelize;
+const { Post, User, Image } = sequelize;
 
 
 export const homeLoading = async (req, res) => {
@@ -7,8 +7,13 @@ export const homeLoading = async (req, res) => {
     include: [{
       model: User,
       attributes: ['userid']
+    }, {
+      model: Image,
+      attributes: ['src'],
+      limit: 1,
     }],
   });
+  console.log(articleList);
 
   console.log('Cookies: ', JSON.stringify(req.cookies, null, 2));
   console.log('Signed Cookies: ', JSON.stringify(req.signedCookies, null, 2));
