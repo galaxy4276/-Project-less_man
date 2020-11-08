@@ -14,13 +14,10 @@ passport.use(new LocalStrategy({
     const find = await User.findOne({
       where: { }
     });
-    console.log('find');
-    console.log(find);
     const { userid, password } = find.dataValues;
     console.table({ value: password});
 
     const verify = await bcrypt.compare(userPw, password);
-    console.log(`verify: ${verify}`);
     if ( userid === userId ) {
       ( verify ) 
         ? done(null, find) 
@@ -30,6 +27,7 @@ passport.use(new LocalStrategy({
       return done(null, false, { message: '아이디가 일치하지 않습니다. '});
     }
   } catch (e) {
+    console.log('passort.js LocalStrategy ERROR');
     console.log(e);
   }
 }));

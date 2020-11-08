@@ -9,6 +9,7 @@ import passport from 'passport';
 import connectMaria from './lib/connectMaria';
 import './controllers/passport';
 import MySQLStore from 'express-mysql-session';
+import methodOverride from 'method-override';
 MySQLStore(session);
 
 
@@ -56,13 +57,14 @@ app.use(passport.session());
 app.use(shareFront);
 
 
-app.all('/*', (req, res, next) => {
-  if (req.user) {
-    console.log(`사용자 ${req.user} 로그인이 되어있습니다.`);
-  }
-  console.log(req.passport);
-  next();
-});
+// app.all('/*', (req, res, next) => {
+  //   if (req.user) {
+    //     console.log(`사용자 ${req.user} 로그인이 되어있습니다.`);
+    //   }
+    //   console.log(req.passport);
+    //   next();
+    // });
+app.use(methodOverride('_method'));
 app.use('/', globalRouter);
 app.use('/auth', authRouter);
 app.use('/post', postRouter);
