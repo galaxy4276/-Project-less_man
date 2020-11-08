@@ -7,6 +7,10 @@ export const getForm = (req, res) => {
   res.render('layouts/postForm', {});
 };
 
+export const getPost = async (req, res, next) => {
+  const post = await Post.findOne({ where: { id: req.params.id }});
+  res.render('layouts/readForm', { post, user: req.user });
+};
 
 export const postForm = async (req, res) => {
   const {
@@ -30,3 +34,10 @@ export const postForm = async (req, res) => {
 
   res.redirect('/');
 };
+
+export const removePost = async (req, res, next) => {
+  const post = await Post.findOne({ where: { id: req.params.id }});
+  await post.destroy();
+  
+  res.redirect('/');
+}

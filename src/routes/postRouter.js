@@ -1,4 +1,4 @@
-import { getForm, postForm } from '../controllers/postControllers';
+import { getForm, getPost, postForm, removePost } from '../controllers/postControllers';
 import path from 'path';
 import { isNotLoggedIn } from '../lib/loginState';
 import multer from 'multer';
@@ -21,6 +21,8 @@ const postRouter = require('express').Router();
 
 postRouter.get('/form', isNotLoggedIn, getForm);
 postRouter.post('/form', upload.array('file'), postForm);
+postRouter.delete('/:id', removePost);
+postRouter.get('/:id', getPost);
 
 
 
