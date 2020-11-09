@@ -1,7 +1,8 @@
-mixin boardCard(title, content, image, writer)
+mixin boardCard(id, title, content, image, writer)
   .board-card-wrapper
     .board-card
-      a.banner-wrapper(href="")
+      a.banner-wrapper(href=`/post/${id}`)
+        img(src=`/image/${image}`, alt="title", srcset="")
         .banner
           .banner-title
             p #{title}

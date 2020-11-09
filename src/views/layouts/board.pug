@@ -25,4 +25,4 @@ include ../mixins/card
       p recent articles
     .main-banners
       for item in articleList
-        +boardCard(item.title, item.content, item.image, item.User.userid)  
+        +boardCard(item.id, item.title, item.content, JSON.stringify(item.Images[0]), item.User.userid)
