@@ -1,12 +1,12 @@
 ## 스스로 2주안에 어디까지 구현할 수 있나?
 
-![screen](./images/screen.png)
+![screen](./images/screen.PNG)
 
 - [x] 기본 레이아웃 스타일링
 - [x] 로그인/ 회원가입 구현
 - [x] 게시판 CRUD 기능 구현
-- [] 페이지네이션 구현
-- [] OAuth 인증 구현
+- [ ] 페이지네이션 구현
+- [ ] OAuth 인증 구현
 
 ## 반성록
 
